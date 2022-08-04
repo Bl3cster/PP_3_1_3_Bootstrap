@@ -9,6 +9,7 @@ import ru.kata.spring.boot_security.demo.model.User;
 import ru.kata.spring.boot_security.demo.service.RoleService;
 import ru.kata.spring.boot_security.demo.service.UserService;
 
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 
 
@@ -49,7 +50,11 @@ public class AdminController {
     public String createNewUser(@RequestParam("role") ArrayList<Long> roles,
                                 @ModelAttribute("user") User user) {
         user.setRoles(roleService.findByIdRoles(roles));
-        userService.saveUser(user);
+        try {
+            userService.saveUser(user);
+        } catch (Exception e) {
+            return "redirect:/admin";
+        }
         return "redirect:/admin";
     }
 
@@ -64,7 +69,11 @@ public class AdminController {
     public String saveUpdateUser(@RequestParam("role") ArrayList<Long> roles,
                                  @ModelAttribute("user") User user) {
         user.setRoles(roleService.findByIdRoles(roles));
-        userService.saveUser(user);
+        try {
+            userService.saveUser(user);
+        } catch (Exception e) {
+            return "redirect:/admin";
+        }
         return "redirect:/admin";
     }
 

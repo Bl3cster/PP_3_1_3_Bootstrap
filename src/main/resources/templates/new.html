@@ -41,7 +41,7 @@
             </ul>
             <h4>Add new User</h4>
             <form action="#" th:method="POST" th:action="@{/admin/add}" th:object="${user}">
-                <div class="mx-auto mt-5" style="width: 300px;">
+                <div class="mx-auto mt-5 text-center" style="width: 300px;">
                     <div>
                         <label>FirstName</label>
                         <input required type="text" class="form-control"
@@ -64,6 +64,7 @@
                         <label>Username</label>
                         <input type="text" class="form-control"
                                th:field="*{username}" id="username">
+
                     </div>
                     <div>
                         <label>Password</label>

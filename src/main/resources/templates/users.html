@@ -39,7 +39,7 @@
             <h4>All Users</h4>
             <table class="table table-striped">
 
-                <thead>
+                <thead align="center">
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
@@ -62,7 +62,7 @@
                     <td align="center" size="+2" th:utext="${user.age}">Age</td>
                     <td align="center" size="+2" th:utext="${user.username}">Username</td>
                     <td align="center" size="+2" th:utext="${user.roles}">Role</td>
-                    <td>
+                    <td align="center">
                         <button type="button" class="btn btn-info text-white" data-toggle="modal"
                                 th:data-target="${'#editModal'+user.userId}">Edit
                         </button>
@@ -82,7 +82,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="mx-auto mt-5" style="width: 200px;">
+                                        <div class="mx-auto mt-5 text-center" style="width: 200px;">
                                             <div>
                                                 <label th:for="${'userId' + user.userId}"
                                                        align="center"><b>UserId</b></label>
@@ -118,6 +118,7 @@
                                                 <label th:for="${'username' + user.username}"><b>Username</b></label>
                                                 <input type="text" class="form-control" name="username"
                                                        th:value="${user.username}" th:id="${'username' + user.userId}">
+
                                             </div>
                                             <div>
                                                 <label th:for="${'password' + user.password}"><b>Password</b></label>
@@ -145,7 +146,7 @@
                         </div>
                     </form>
 
-                    <td>
+                    <td align="center">
                         <button type="button" class="btn btn-danger" data-toggle="modal"
                                 th:data-target="${'#editDelete'+ user.userId}">
                             Delete
@@ -165,7 +166,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="mx-auto mt-5" style="width: 200px;">
+                                        <div class="mx-auto mt-5 text-center" style="width: 200px;">
                                             <div>
                                                 <label th:for="${'userId' + user.userId}"
                                                        align="center"><b>UserId</b></label>
